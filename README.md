@@ -1,64 +1,48 @@
-Esta es una aplicación que está desarrollada con varias tecnologías web, además de frameworks y herramientas útiles para la creación de aplicaciones web.
 
-Versión 1:
-La aplicación está basada en un quiosco de comida, lo que permite ver un catálogo de comida que puede ser bastante atractivo. Los usuarios pueden elegir sus alimentos y añadirlos a su pedido, escribir su nombre para identificarlo, recibir retroalimentación sobre el costo total de su pedido y enviarlo a administración. El personal de administración puede ver los pedidos realizados por los usuarios, identificándolos por el nombre que escribieron antes de realizarlos.
 
-En la Versión 1 de esta aplicación se agregaron las siguientes características:
+# Esta es una aplicación que está desarrollada con varias tecnologías web, además de frameworks y herramientas útiles para la creación de aplicaciones web.
 
------Cliente:
+## Fecha de primer deploy: 28/05/2024
+### Versión 1:
 
---Una vista de usuario común o cliente, donde aparece una barra lateral con las categorías de los alimentos y el logo de la empresa.
+    La aplicación está basada en un quiosco de comida, lo que permite ver un catálogo de comida que puede ser bastante atractivo. Los usuarios pueden elegir sus alimentos y añadirlos a su pedido, escribir su nombre para identificarlo, recibir retroalimentación sobre el costo total de su pedido y enviarlo a administración. El personal de administración puede ver los pedidos realizados por los usuarios, identificándolos por el nombre que escribieron antes de realizarlos.
+
+ * * En la Versión 1 de esta aplicación se agregaron las siguientes características:
+
+- * Cliente:
+
+1. Una vista de usuario común o cliente, donde aparece una barra lateral con las categorías de los alimentos y el logo de la empresa.
 Categorías de productos identificables por su nombre, como: Café, Hamburguesas, Pizzas, Donas, Pasteles, Galletas; cada una de estas categorías cuenta con una imagen que la representa e identifica.
 
---Una sección donde, posterior a elegir alguna categoría, aparecen productos a modo de tarjetas con información relevante, como la descripción del producto, su precio, una imagen del producto y un botón con la leyenda "Agregar", para que el usuario pueda elegir sus productos y, al presionar el botón adjunto a cada tarjeta, el producto se añada al pedido.
+2. Una sección donde, posterior a elegir alguna categoría, aparecen productos a modo de tarjetas con información relevante, como la descripción del producto, su precio, una imagen del producto y un botón con la leyenda "Agregar", para que el usuario pueda elegir sus productos y, al presionar el botón adjunto a cada tarjeta, el producto se añada al pedido.
 
---Una sección de pedido donde, después de añadir uno o varios productos, se actualiza a un resumen de pedido. Este pedido cuenta con una tarjeta con la descripción del producto, el costo unitario, la cantidad de productos a consumir y un subtotal por cada tarjeta; una etiqueta de contexto donde se puede ver el total a pagar, un campo para que el usuario escriba su nombre y un botón para enviar el pedido a administración.
+3. Una sección de pedido donde, después de añadir uno o varios productos, se actualiza a un resumen de pedido. Este pedido cuenta con una tarjeta con la descripción del producto, el costo unitario, la cantidad de productos a consumir y un subtotal por cada tarjeta; una etiqueta de contexto donde se puede ver el total a pagar, un campo para que el usuario escriba su nombre y un botón para enviar el pedido a administración.
 
------Administrador:
+- * Administrador:
 
---El administrador tiene su propia página web, en la cual también cuenta con una barra lateral con tres opciones: Órdenes, Productos y Ver Quiosco.
+ * * El administrador tiene su propia página web, en la cual también cuenta con una barra lateral con tres opciones: Órdenes, Productos y Ver Quiosco.
 
---Un menú de Órdenes que se carga trayendo información de las órdenes no atendidas aún por el personal, mostrando los pedidos de los clientes que aún están por ser despachados. Los pedidos se pueden visualizar como tarjetas con el nombre del cliente, los productos ordenados y su cantidad, además del total a pagar.
+1. Un menú de Órdenes que se carga trayendo información de las órdenes no atendidas aún por el personal, mostrando los pedidos de los clientes que aún están por ser despachados. Los pedidos se pueden visualizar como tarjetas con el nombre del cliente, los productos ordenados y su cantidad, además del total a pagar.
 
---Un enlace que carga una página con un único mensaje: "Administrar Productos".
+2. Un enlace que carga una página con un único mensaje: "Administrar Productos".
 
---Un enlace que abre una nueva pestaña en el navegador y lleva al administrador a la vista del cliente; este enlace tiene el nombre de "Ver Quiosco".
+3. Un enlace que abre una nueva pestaña en el navegador y lleva al administrador a la vista del cliente; este enlace tiene el nombre de "Ver Quiosco".
 
+## Fecha de segundo deploy: 30/05/2024
+### Version 2: 
 
+    Durente la segunda version y deploy de la aplicacion de comida quiosco, se añadieron las siguintes funcionalidades: Ahora el administrador puede ver los productos registrados en el sistema y tiene la posibilidad de buscar productos especificos por medio de palabras clave, gracias a la implementación de un campo de busqueda. Por medio de un formulario, el administrador, ahora tiene la capacidad de agregar nuevos productos al inventario, llenar los campos de nombre, categoria, precio y cargar una imagen ahora en obligatorio. Fueron arreglados errores que impedian ver pedidos en tiempo real ademas de que esta funcion fue ampliada para actualizarse cada cierto tiempo.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+ * * En la Versión 1 de esta aplicación se agregaron las siguientes características:
 
-## Getting Started
+1. Fue implementada la seccion Products, en la pagina de administración, donde ahora es posible ver los productos que se han registrado en el sistema. Para facilitar la visualización de los productos son mostrados a manera de tabla con la infromación pertinente para cada uno, además, la tabla fue paginada, lo que quiere decir que los productos se mostrarán de 10 en 10 y estos pueden ser explorados mediante botones que indican el número de página.
 
-First, run the development server:
+2. Complemento de la sección Products, un campo de busqueda también fue implementado. Cuando se escribe una palabra y se da clic en el boton de Search, los productos que contengan esa palabra, independientemente si es que esta fue escrita en mayúsculas o minúsculas, apareceran nuevamente a formato de tabla, en caso de no encontrar ningún producto conicidente, un mensaje de contexto aparecera mencionando que no se encontraron productos.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+3. Adicionalmente fue añadida la función de agregar más productos, donde, por medio de un formulario, se solicitaran al usuario datos del nuevo producto, el nombre de este, su precio, categoria a la que pertence y una imagen del producto, todos estos campos son obligatorios, es decir, es necesario llenar todos y cada uno, en caso contrario el sistema se encargara de advertir al usuario que no todos los campos han sido llenados y mecionará cual de estos campos esta vacio.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Vista de Usuario.
+(quiosco-next-dylan.vercel.app)[https://quiosco-next-dylan.vercel.app]
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Vista de Administrador.
+(quiosco-next-dylan.vercel.app/admin/products)[https://quiosco-next-dylan.vercel.app/admin/products]

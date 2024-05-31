@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Quiosco Next.js con App Router y Prisma",
-  description: "Quiosco Next.js con App Router y Prisma",
+  title: "Quisco De Comida",
+  description: "Quiosco",
 };
 
 export default function RootLayout({
@@ -15,8 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-gray-100`}>{children}</body>
+  <html lang="en">
+    
+    <body className={`${inter.className} bg-gray-100`}>
+      {children}
+    </body>
     </html>
   );
 }

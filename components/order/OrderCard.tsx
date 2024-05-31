@@ -31,6 +31,14 @@ export default function OrderCard({ order }: OrderCardProps) {
                     <dd className="text-base font-medium text-gray-900">{formatCurrency(order.total)}</dd>
                 </div>
             </dl>
+            <form action={completeOrder}>
+                <input type="hidden" value={order.id} name="order_id" />
+                <input
+                    type="submit"
+                    className="bg-indigo-600 hover:bg-indigo-800 text-white w-full mt-5 p-3 uppercase font-bold cursor-pointer"
+                    value='Marcar Orden Completada'
+                />
+            </form>
         </section>
     )
 }
