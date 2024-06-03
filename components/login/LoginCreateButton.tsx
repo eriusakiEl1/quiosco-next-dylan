@@ -14,7 +14,7 @@ export default function LoginCreateButton(){
       className="button justify-end bg-amber-200 lg:w-auto text-xl px-7 py-3 text-center font-bold"
       onClick={handleLoginClick}
     >
-      Login
+      Crear Usuario.
     </button>
   );
 }
