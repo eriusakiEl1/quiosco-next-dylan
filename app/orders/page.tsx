@@ -1,12 +1,13 @@
 "use client"
-import useSWR from 'swr'
-import OrderCard from "@/components/order/OrderCard";
-import Heading from "@/components/ui/Heading";
-import { OrderWithProducts } from '@/src/types';
-import styles from './loader.module.css';
+import Logo from "@/components/ui/Logo"
+import useSWR from "swr"
+import styles from "../admin/orders/loader.module.css"
+import { OrderWithProducts } from "@/src/types"
+import LatestOrderItem from "@/components/order/LatestOrderItem"
+
 
 export default function OrdersPage(){
-    const url = '/admin/orders/api'
+    const url = '/orders/api'
     const fetcher = () => fetch(url).then(res => res.json()).then(data => data)
     const { data, error, isLoading } = useSWR<OrderWithProducts[]>(url, fetcher, {
         refreshInterval: 60000,
@@ -21,20 +22,19 @@ export default function OrdersPage(){
 
     if(data) return (
         <>
-            <Heading>Administrar Órdenes</Heading>
+            <h1 className="text-center mt-20 text-6xl font-black">Oredenes Listas</h1>
+            <Logo />
 
             {data.length ? (
-                <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols3 gap-5 mt-5">
-                    {data.map(order =>(
-                        <OrderCard
+                <div className="grid grid-cols-1 gap-5 max-w-5xl mx-auto mt-10">
+                    {data.map(order => (
+                        <LatestOrderItem
                             key={order.id}
                             order={order}
                         />
                     ))}
                 </div>
-            ) : <p className="text-center">No hay Órdenes pendientes</p>}
-        
+            ) : <p className="text-center my-10">No Hay Ordenes Listas</p>}
         </>
-        
     )
 }

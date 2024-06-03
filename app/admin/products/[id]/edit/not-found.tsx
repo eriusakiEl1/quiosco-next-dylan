@@ -10,8 +10,6 @@ export default function NotFound() {
                 cursor-pointer w-full lg:w-auto"
             
             >Ir a Productos</Link>
-            
-
         </div>
     )
 }

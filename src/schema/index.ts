@@ -1,3 +1,4 @@
+import { CiPassport1 } from 'react-icons/ci'
 import { z } from 'zod'
 
 export const OrderSchema = z.object({
@@ -38,4 +39,25 @@ export const ProductSchema = z.object({
         .refine((value) => value > 0, { message: 'La Categoría es Obligatoria' })
         .or(z.number().min(1, {message: 'La Categoría es Obligatoria' })),
     image: z.string().min(1, {message: 'La Imagen es Obligatoria'})
+})
+
+export const LoginSchema = z.object({
+    email: z.string()
+        .trim()
+        .min(1, {message: 'Debe ingresar su Email'}),
+    pass: z.string()
+        .trim()
+        .min(1, {message: 'Debe ingresar su Contraseña'})
+})
+
+export const UserSchema = z.object({
+    name: z.string()
+        .trim()
+        .min(1, {message: 'Debe ingresar su Nombre'}),
+    email: z.string()
+        .trim()
+        .min(1, {message: 'Debe ingresar su Email'}),
+    pass: z.string()
+        .trim()
+        .min(1, {message: 'Debe ingresar su Contraseña'})
 })
